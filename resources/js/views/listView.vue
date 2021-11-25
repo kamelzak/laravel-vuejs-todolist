@@ -1,0 +1,26 @@
+<template>
+    <div>
+        <div v-for="(item, idx) in items" :key="idx">
+            <list-item :item="item" class="item" v-on:itemchanged="$emit('reloadlist')">
+
+            </list-item>
+        </div>
+    </div>
+</template>
+<script>
+import ListItem from './listItem.vue'
+
+export default {
+    props : ['items'],
+    components : { ListItem },
+
+}
+</script>
+
+<style scoped>
+.item {
+    background: #e6e6e6;
+    padding: 5px;
+    margin-top: 5px;
+}
+</style>
